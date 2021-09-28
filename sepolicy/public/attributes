@@ -6,3 +6,4 @@ attribute vendor_payment_security_prop;
 attribute vendor_fp_prop;
 attribute hal_touchfeature_client;
 attribute hal_mlipay_default_exec;
+hal_attribute_lineage(mlipay)
