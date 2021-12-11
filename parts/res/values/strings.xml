@@ -17,4 +17,13 @@
 <resources>
     <!-- Ambient settings -->
     <string name="ambient_enable">Use ambient display</string>
+    
+    <!-- DC dimming settings -->
+    <string name="dc_dimming_enable_title">DC Dimming</string>
+    <string name="dc_dimming_enable_summary">DC Dimming reduces eye strain in low light conditions (Note: reduce image quality)</string>
+    <string name="dc_dimming_enable_summary_not_supported">DC Dimming is not currently supported by the kernel</string>
+
+    <!--Display settings fragment -->
+    <string name="display_settings_title">Custom display settings</string>
+    <string name="display_settings_summary">DC Dimming</string>
 </resources>
