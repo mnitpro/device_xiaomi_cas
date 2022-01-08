@@ -14,6 +14,9 @@ $(call inherit-product, device/xiaomi/cas/device.mk)
 # Inherit some common Evolution X stuff.
 $(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 
+# Inherit from the Lawnchair additions.
+$(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
+
 # Boot Animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
