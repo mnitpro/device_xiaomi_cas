@@ -17,7 +17,7 @@ $(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 # Boot Animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
-TARGET_SUPPORTS_QUICK_TAP := true
+#TARGET_SUPPORTS_QUICK_TAP := true
 EXTRA_UDFPS_ANIMATIONS := true
 
 # Evolution-X things
