@@ -17,7 +17,25 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
+<<<<<<< HEAD
 $(call inherit-product, vendor/xiaomi/cas/cas-vendor.mk)
+=======
+$(call inherit-product, vendor/xiaomi/gauguin/gauguin-vendor.mk)
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-elixir
+
+PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/xiaomi
+>>>>>>> c3b91ec... gauguin: Bring-ups For Project Elixir
 
 # Platform
 PRODUCT_BOARD_PLATFORM := kona
