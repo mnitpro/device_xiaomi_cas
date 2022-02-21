@@ -237,7 +237,9 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 # IPACM
-$(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_cfg.xml
 
 # IR
 PRODUCT_PACKAGES += \
