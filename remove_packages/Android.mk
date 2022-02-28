@@ -7,6 +7,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_OVERRIDES_PACKAGES := \
 	FilesPrebuilt \
 	MaestroPrebuilt \
+	NexusLauncherRelease \
 	SoundAmplifierPrebuilt \
     YouTube \
     YouTubeMusicPrebuilt
