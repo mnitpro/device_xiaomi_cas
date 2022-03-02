@@ -463,3 +463,5 @@ case "$buildvariant" in
         echo "4 4 1 4" > /proc/sys/kernel/printk
         ;;
 esac
+
+chown system /sys/class/power_supply/wireless/reverse_chg_mode

@@ -26,4 +26,7 @@
     <!--Display settings fragment -->
     <string name="display_settings_title">Custom display settings</string>
     <string name="display_settings_summary">DC Dimming</string>
+
+    <!--Reverse Charge -->
+    <string name="reverse_charge">Reverse Charge</string>
 </resources>
