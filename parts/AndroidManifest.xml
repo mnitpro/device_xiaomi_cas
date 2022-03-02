@@ -42,6 +42,13 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".PowerConnectedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.POWER_CONNECTED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
         <service
             android:name=".doze.DozeService"
             android:permission="XiaomiDozeService">
@@ -51,6 +58,17 @@
             android:name=".display.DcDimmingTileService"
             android:icon="@drawable/ic_dc_tile"
             android:label="@string/dc_dimming_enable_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".charge.ReverseChargeTileService"
+            android:icon="@drawable/ic_dc_tile"
+            android:label="@string/reverse_charge"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action
