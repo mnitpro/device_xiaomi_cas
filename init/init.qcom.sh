@@ -465,3 +465,4 @@ case "$buildvariant" in
 esac
 
 chown system /sys/class/power_supply/wireless/reverse_chg_mode
+chattr -R +c /data/app 
