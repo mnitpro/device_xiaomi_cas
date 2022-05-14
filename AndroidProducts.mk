@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/kscope_cas.mk
+    $(LOCAL_DIR)/evolution_cas.mk
 
 COMMON_LUNCH_CHOICES := \
-    kscope_cas-eng \
-    kscope_cas-user \
-    kscope_cas-userdebug
+    evolution_cas-eng \
+    evolution_cas-user \
+    evolution_cas-userdebug
