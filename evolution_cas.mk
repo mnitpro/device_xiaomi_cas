@@ -19,7 +19,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 
 # Evolution-X things
 EVO_BUILD_TYPE := OFFICIAL
-EVO_MAINTAINER := zinger
+DEVICE_MAINTAINER := zinger
 
 PRODUCT_NAME := evolution_cas
 PRODUCT_DEVICE := cas
