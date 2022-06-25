@@ -1,7 +1,7 @@
 Device configuration for Xiaomi MI 10 Ultra
 =========================================
 
-The Xiaomi MI 10 Ultra (codenamed _"cas"_) is a high-end smartphone from Xiaomi.
+The Xiaomi Mi 10 Ultra (codenamed _"cas"_) is a high-end smartphone from Xiaomi.
 
 It was announced on August 2020. Release date was August 2020.
 
