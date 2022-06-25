@@ -1,4 +1,4 @@
-Device configuration for Xiaomi MI 10 Ultra
+Device configuration for Xiaomi Mi 10 Ultra
 =========================================
 
 The Xiaomi Mi 10 Ultra (codenamed _"cas"_) is a high-end smartphone from Xiaomi.
