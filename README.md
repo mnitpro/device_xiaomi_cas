@@ -1,11 +1,9 @@
-Device configuration for Xiaomi MI 10 Ultra
+Device configuration for Xiaomi Mi 10 Ultra
 =========================================
 
-The Xiaomi MI 10 Ultra (codenamed _"cas"_) is a high-end smartphone from Xiaomi.
+The Xiaomi Mi 10 Ultra (codenamed _"cas"_) is a high-end smartphone from Xiaomi.
 
 It was announced on August 2020. Release date was August 2020.
-
-:sparkling_heart: Thanks [@ChaptSand](https://github.com/chaptsand) and [@Ramisky](https://github.com/Ramisky)
 
 ## Device specifications
 
@@ -23,4 +21,4 @@ Camera  | 48MP(wide) 48MP(Periscope Telephoto) 20MP(Ultra-wide) 12MP(Telephoto 2
 
 ## Device picture
 
-![Xiaomi MI 10 Ultra 5G ](https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-mi10-ultra-11.jpg "Xiaomi MI 10 Ultra 5G")
+![Xiaomi Mi 10 Ultra 5G ](https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-mi10-ultra-11.jpg "Xiaomi Mi 10 Ultra 5G")
