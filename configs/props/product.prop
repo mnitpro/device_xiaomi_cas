@@ -8,7 +8,6 @@ audio.sys.offload.pstimeout.secs=3
 audio.sys.routing.latency=0
 ro.af.client_heap_size_kbyte=7168
 
-<<<<<<< HEAD:configs/props/product.prop
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
 
@@ -16,6 +15,5 @@ dalvik.vm.dex2oat64.enabled=true
 persist.sys.fuse.passthrough.enable=true
 =======
 # Elixir Stuffs
-ro.elixir.maintainer=Mir Yasin Ali(i_am_miki)
-org.elixir.device=Xiaomi Mi 10T lite/Mi 10i/Redmi Note 9 Pro 5G(Gauguin)
->>>>>>> c3b91ec... gauguin: Bring-ups For Project Elixir:product.prop
+ro.elixir.maintainer=Zinger
+org.elixir.device=Xiaomi Mi 10 Ultra(cas)
