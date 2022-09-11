@@ -238,11 +238,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
 
-# LibXML2
-PRODUCT_PACKAGES += \
-    libxml2 \
-    libxml2.vendor
-
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
