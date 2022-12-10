@@ -3,8 +3,6 @@ aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=1
 af.fast_track_multiplier=1
-audio.offload.buffer.size.kb=32
-audio.offload.gapless.enabled=true
 persist.vendor.audio.ambisonic.auto.profile=false
 persist.vendor.audio.ambisonic.capture=false
 persist.vendor.audio.apptype.multirec.enabled=false
@@ -115,37 +113,12 @@ vendor.qcom.bluetooth.soc=hastings
 camera.disable_zsl_mode=true
 persist.camera.gyro.disable=0
 
-# CNE
-persist.vendor.cne.feature=1
-
-# ConfigStore
-ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.has_HDR_display=true
-ro.surface_flinger.use_color_management=true
-ro.surface_flinger.wcg_composition_dataspace=143261696
-ro.surface_flinger.protected_contents=true
-ro.surface_flinger.set_touch_timer_ms=200
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
-
 # Crypto
 ro.crypto.allow_encrypt_override=true
 ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Display
 ro.vendor.display.sensortype=2
-vendor.display.comp_mask=2
-vendor.display.disable_excl_rect_partial_fb=1
-vendor.display.disable_excl_rect=0
-vendor.display.disable_hw_recovery_dump=1
-vendor.display.disable_offline_rotator=1
-vendor.display.disable_scaler=0
-vendor.display.enable_async_powermode=0
-vendor.display.enable_optimize_refresh=1
-vendor.display.enable_posted_start_dyn=1
-vendor.display.qdcm.disable_factory_mode=1
-vendor.display.qdcm.mode_combine=1
-vendor.display.use_smooth_motion=0
-vendor.display.use_layer_ext=0
 
 # DPM
 persist.vendor.dpm.feature=1
@@ -163,23 +136,11 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
-debug.egl.hw=0
-debug.sf.enable_gl_backpressure=1
-debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
-debug.sf.high_fps_early_phase_offset_ns=-4000000
-debug.sf.high_fps_late_app_phase_offset_ns=1000000
-debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
-debug.sf.hw=0
-persist.demo.hdmirotationlock=false
-persist.sys.force_sw_gles=1
-persist.sys.sf.color_mode=0
-persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=2
+ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.kona.api30
 ro.hardware.vulkan=adreno
 ro.hardware.egl=adreno
-ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.kona.api30
 ro.opengles.version=196610
-vendor.gralloc.disable_ubwc=0
 
 # Keystore
 ro.hardware.keystore_desede=true
@@ -187,7 +148,6 @@ ro.hardware.keystore_desede=true
 # Media
 debug.stagefright.ccodec=1
 debug.stagefright.omx_default_rank=0
-media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 media.stagefright.enable-aac=true
 media.stagefright.enable-fma2dp=true
 media.stagefright.enable-http=true
@@ -196,17 +156,10 @@ media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
-# NFC
-ro.nfc.port=I2C
-
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
 
 # Netmgr
-persist.data.df.dev_name=rmnet_usb0
-persist.data.netmgrd.qos.enable=true
-persist.data.wda.enable=true
-persist.rmnet.data.enable=true
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 ro.vendor.use_data_netmgrd=true
@@ -221,31 +174,19 @@ persist.vendor.qcomsysd.enabled=1
 persist.rcs.supported=1
 
 # RIL
-persist.radio.dynamic_sar=false
 persist.radio.multisim.config=dsds
-persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.atfwd.start=true
-persist.vendor.radio.cdma_cap=true
 persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.data_con_rprt=1
 persist.vendor.radio.data_ltd_sys_ind=1
-persist.vendor.radio.display_mipi=true
 persist.vendor.radio.dynamic_sar=1
 persist.vendor.radio.enable_temp_dds=true
-persist.vendor.radio.enableadvancedscan=true
 persist.vendor.radio.force_ltd_sys_ind=1
 persist.vendor.radio.force_on_dc=true
 persist.vendor.radio.manual_nw_rej_ct=1
-persist.vendor.radio.moniter_call=true
-persist.vendor.radio.moniter_dds=true
-persist.vendor.radio.moniter_main=true
-persist.vendor.radio.moniter_screen=true
-persist.vendor.radio.mt_sms_ack=30
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.redir_party_num=1
-persist.vendor.radio.sib16_support=1
-rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.default_cdma_sub=0
 ro.vendor.radio.5g=3
 telephony.lteOnCdmaDevice=1
@@ -254,5 +195,7 @@ telephony.lteOnCdmaDevice=1
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=SM8250
 
-# Time
-persist.timed.enable=true
+# ZRAM writeback
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=1440
+ro.zram.periodic_wb_delay_hours=24
