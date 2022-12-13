@@ -5,14 +5,6 @@
 -->
 <resources>
 
-    <!-- Indicate available ColorDisplayManager.COLOR_MODE_xxx. -->
-    <integer-array name="config_availableColorModes">
-        <item>0</item> <!-- COLOR_MODE_NATURAL -->
-        <item>1</item> <!-- COLOR_MODE_BOOSTED -->
-        <item>2</item> <!-- COLOR_MODE_SATURATED -->
-        <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
-    </integer-array>
-
     <!-- Configure mobile tcp buffer sizes in the form:
          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
          If no value is found for the rat-name in use, the system default will be applied.
@@ -29,61 +21,6 @@
         <item>edge:4093,26280,35040,4096,16384,35040</item>
         <item>gprs:4092,8760,11680,4096,8760,11680</item>
         <item>evdo:4094,87380,524288,4096,16384,262144</item>
-    </string-array>
-
-    <!-- This setting is deprecated, please use
-         com.android.networkstack.tethering.R.array.config_tether_bluetooth_regexs instead. -->
-    <string-array name="config_tether_bluetooth_regexs">
-        <item>bnep\\d</item>
-        <item>bt-pan</item>
-    </string-array>
-
-    <!-- This setting is deprecated, please use
-         com.android.networkstack.tethering.R.array.config_dhcp_range instead. -->
-    <string-array name="config_tether_dhcp_range">
-        <item>192.168.42.2</item>
-        <item>192.168.42.254</item>
-        <item>192.168.43.2</item>
-        <item>192.168.43.254</item>
-        <item>192.168.44.2</item>
-        <item>192.168.44.254</item>
-        <item>192.168.45.2</item>
-        <item>192.168.45.254</item>
-        <item>192.168.46.2</item>
-        <item>192.168.46.254</item>
-        <item>192.168.47.2</item>
-        <item>192.168.47.254</item>
-        <item>192.168.48.2</item>
-        <item>192.168.48.254</item>
-        <item>192.168.49.2</item>
-        <item>192.168.49.254</item>
-        <item>192.168.50.2</item>
-        <item>192.168.50.254</item>
-        <item>192.168.51.2</item>
-        <item>192.168.51.254</item>
-    </string-array>
-
-    <!-- This setting is deprecated, please use
-         com.android.networkstack.tethering.R.array.config_tether_upstream_types. -->
-    <integer-array name="config_tether_upstream_types">
-        <item>0</item>
-        <item>1</item>
-        <item>5</item>
-        <item>7</item>
-    </integer-array>
-
-    <!-- This setting is deprecated, please use
-         com.android.networkstack.tethering.R.array.config_tether_usb_regexs instead. -->
-    <string-array name="config_tether_usb_regexs">
-        <item>usb\\d</item>
-        <item>rndis\\d</item>
-    </string-array>
-
-    <!-- This setting is deprecated, please use
-         com.android.networkstack.tethering.R.array.config_tether_wifi_regexs instead. -->
-    <string-array name="config_tether_wifi_regexs">
-        <item>softap0</item>
-        <item>wlan0</item>
     </string-array>
 
     <!-- This string array should be overridden by the device to present a list of network
@@ -222,6 +159,9 @@
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
+    <!-- Whether to select voice/data/sms preference without user confirmation -->
+    <bool name="config_voice_data_sms_auto_fallback">true</bool>
+
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
          Here are a few of them:
@@ -254,23 +194,11 @@
          skipped, the restoring is handled by modem if true. -->
     <bool name="skip_restoring_network_selection">true</bool>
 
-    <!-- Idle current for bluetooth controller, 0 by default. -->
-    <integer name="config_bluetooth_idle_cur_ma">3</integer>
-
-    <!-- Operating volatage for bluetooth controller, 0 by default. -->
-    <integer name="config_bluetooth_operating_voltage_mv">3700</integer>
-
-    <!-- Rx current for bluetooth controller, 0 by default. -->
-    <integer name="config_bluetooth_rx_cur_ma">20</integer>
-
-    <!-- Tx current for bluetooth controller, 0 by default. -->
-    <integer name="config_bluetooth_tx_cur_ma">33</integer>
-
     <!-- The default peak refresh rate for a given device. Change this value if you want to prevent
          the framework from using higher refresh rates, even if display modes with higher refresh
          rates are available from hardware composer. Only has an effect if the value is
          non-zero. -->
-    <integer name="config_defaultPeakRefreshRate">180</integer>
+    <integer name="config_defaultPeakRefreshRate">240</integer>
 
     <!-- The default refresh rate for a given device. Change this value to set a higher default
          refresh rate. If the hardware composer on the device supports display modes with a higher
@@ -322,4 +250,12 @@
 
     <!-- Specifies the maximum burn-in offset vertically. -->
     <integer name="config_burnInProtectionMaxVerticalOffset">40</integer>
+
+    <!-- Package names to use with vendor iwlan implementation. -->
+    <string name="config_wlan_data_service_package">vendor.qti.iwlan</string>
+    <string name="config_wlan_network_service_package">vendor.qti.iwlan</string>
+    <string name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
+
+    <!-- Configure emergency apn as empty(null) apn -->
+    <string name="config_emergency_apn"></string>
 </resources>
