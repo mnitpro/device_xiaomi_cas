@@ -18,9 +18,10 @@
 package org.lineageos.settings.display;
 
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.collapsingtoolbar.R;
+import com.android.settingslib.widget.R;
 
 public class DisplaySettingsActivity extends CollapsingToolbarBaseActivity {
 
@@ -29,7 +30,7 @@ public class DisplaySettingsActivity extends CollapsingToolbarBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction().replace(R.id.content_frame,
-                new DisplaySettingsFragment(), TAG_DCDIMMING).commit();
+        getFragmentManager().beginTransaction().replace(android.R.id.content,
+                new DcDimmingSettingsFragment(), TAG_DCDIMMING).commit();
     }
 }
