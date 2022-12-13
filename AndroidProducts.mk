@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/rice_cas.mk
+    $(LOCAL_DIR)/derp_cas.mk
 
 COMMON_LUNCH_CHOICES := \
-    rice_cas-eng \
-    rice_cas-user \
-    rice_cas-userdebug
+    derp_cas-eng \
+    derp_cas-user \
+    derp_cas-userdebug
