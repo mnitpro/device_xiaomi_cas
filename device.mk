@@ -164,10 +164,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     GCamGOPrebuilt-SHAMIM_V5
 
-# Graphene Camera
-PRODUCT_PACKAGES += \
-    GrapheneOSCamera
-
 #AdAway
 PRODUCT_PACKAGES += \
     AdAwayPrebuilt
