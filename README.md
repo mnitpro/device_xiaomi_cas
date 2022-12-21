@@ -1,7 +1,7 @@
-Device configuration for Xiaomi MI 10 Ultra
+Device configuration for Xiaomi Mi 10 Ultra 5G
 =========================================
 
-The Xiaomi MI 10 Ultra (codenamed _"cas"_) is a high-end smartphone from Xiaomi.
+The Xiaomi Mi 10 Ultra 5G (codenamed _"cas"_) is a high-end smartphone from Xiaomi.
 
 It was announced on August 2020. Release date was August 2020.
 
@@ -11,7 +11,7 @@ It was announced on August 2020. Release date was August 2020.
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-SoC     | Qualcomm SDM865 Snapdragon 865
+SoC     | Qualcomm SDM865 Snapdragon 865 5G
 CPU     | Octa-core (1x2.84 GHz Kryo 585 & 3x2.42 GHz Kryo 585 & 4x1.80 GHz Kryo 585)
 GPU     | Adreno 650
 Memory  | 8/12/16 GB RAM
@@ -23,4 +23,4 @@ Camera  | 48MP(wide) 48MP(Periscope Telephoto) 20MP(Ultra-wide) 12MP(Telephoto 2
 
 ## Device picture
 
-![Xiaomi MI 10 Ultra 5G ](https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-mi10-ultra-11.jpg "Xiaomi MI 10 Ultra 5G")
+![Xiaomi Mi 10 Ultra 5G ](https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-mi10-ultra-11.jpg "Xiaomi Mi 10 Ultra 5G")
