@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/rice_cas.mk
+    $(LOCAL_DIR)/bliss_cas.mk
 
 COMMON_LUNCH_CHOICES := \
-    rice_cas-eng \
-    rice_cas-user \
-    rice_cas-userdebug
+    bliss_cas-eng \
+    bliss_cas-user \
+    bliss_cas-userdebug
