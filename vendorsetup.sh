@@ -12,10 +12,6 @@ echo 'Cloning Kernel tree [2/7]'
 # Kernel Tree
 git clone --depth=1 https://github.com/XayahSuSuSu/android_kernel_xiaomi_cas kernel/xiaomi/cas
 
-echo 'Cloning DT extra [3/7]'
-# DT extra
-git clone --depth=1 https://github.com/ArrowOS-Devices/android_device_xiaomi_extras device/xiaomi/extras
-
 echo 'Cloning Vendor tree [4/7]'
 # Vendor Tree
 git clone --depth=1 https://gitlab.com/Xayah/vendor_xiaomi_cas vendor/xiaomi/cas
