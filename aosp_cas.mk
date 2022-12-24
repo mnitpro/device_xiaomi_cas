@@ -13,6 +13,10 @@ $(call inherit-product, device/xiaomi/cas/device.mk)
 
 # Inherit some common Project Elixir stuffs.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+# Inherit from the Lawnchair additions.
+#$(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
+
 CUSTOM_BUILD_TYPE := OFFICIAL
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
 TARGET_INCLUDE_STOCK_ACORE := true
