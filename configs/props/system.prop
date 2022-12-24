@@ -10,6 +10,7 @@ pm.dexopt.first-boot=quicken
 # Display
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 ro.surface_flinger.supports_background_blur=1
+ro.surface_flinger.enable_layer_caching=true
 
 # IMS
 persist.dbg.volte_avail_ovr=1
