@@ -152,21 +152,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service_64 \
-    libcamera2ndk_vendor \
-    libdng_sdk.vendor \
-    libgui_vendor \
-    vendor.qti.hardware.camera.device@1.0.vendor \
-    vendor.qti.hardware.camera.postproc@1.0.vendor
-
-# CameraGO
-PRODUCT_PACKAGES += \
-    GCamGOPrebuilt-SHAMIM_V5
-
-#AdAway
-PRODUCT_PACKAGES += \
-    AdAwayPrebuilt
+    Camera2
 
 # Component overrides
 PRODUCT_COPY_FILES += \
@@ -331,9 +317,7 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-system 
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-system
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
@@ -393,10 +377,6 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
-
-# Shims
-PRODUCT_PACKAGES += \
-    lib-watermarkshim
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 29
