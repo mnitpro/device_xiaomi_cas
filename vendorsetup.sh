@@ -1,33 +1,27 @@
 echo 'Starting to clone stuffs needed for your device'
-# Stuff to remove
-#rm -rf hardware/qcom-caf/sm8250/display
-#rm -rf hardware/qcom-caf/sm8250/audio
-#rm -rf hardware/qcom-caf/sm8250/media
+rm -rf vendor/qcom/opensource/usb
+rm -rf device/qcom/sepolicy
 
-echo 'Cloning Device tree [1/7]'
+echo 'Cloning Device tree [1/6]'
 # Device Tree
-git clone --depth=1 https://github.com/mnitpro/device_xiaomi_cas -b elix device/xiaomi/cas
+#git clone --depth=1 https://github.com/zingrx/device_xiaomi_cas -b elix device/xiaomi/cas
 
-echo 'Cloning Kernel tree [2/7]'
+echo 'Cloning Kernel tree [2/6]'
 # Kernel Tree
 git clone --depth=1 https://github.com/XayahSuSuSu/android_kernel_xiaomi_cas kernel/xiaomi/cas
 
-echo 'Cloning DT extra [3/7]'
-# DT extra
-git clone --depth=1 https://github.com/ArrowOS-Devices/android_device_xiaomi_extras device/xiaomi/extras
+echo 'Cloning updated USB Drivers [3/6]'
+# Qcom USB
+git clone https://github.com/ArrowOS/android_vendor_qcom_opensource_usb -b arrow-13.0 vendor/qcom/opensource/usb
 
-echo 'Cloning Vendor tree [4/7]'
+echo 'Cloning Vendor tree [4/6]'
 # Vendor Tree
 git clone --depth=1 https://gitlab.com/Xayah/vendor_xiaomi_cas vendor/xiaomi/cas
 
-echo 'Cloning display HAL [5/7]'
-# Display HALs
-git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_display -b spring-caf-sm8250 hardware/qcom-caf/sm8250/display
+echo 'Cloning Hardware Xiaomi tree [5/6]'
+# Hardware Xiaomi
+git clone https://github.com/PixelExperience/hardware_xiaomi hardware/xiaomi
 
-#echo 'Cloning audio HAL [6/7]'
-# Audio HALs
-#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_audio -b spring-caf-sm8250 hardware/qcom-caf/sm8250/audio
-
-#echo 'Cloning media HAL [7/7]'
-# Media HALs
-#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_media -b spring-caf-sm8250 hardware/qcom-caf/sm8250/media
+echo 'Cloning Device QCOM SEPolicy [6/6]'
+# Device SEPolicy
+git clone https://github.com/ArrowOS/android_device_qcom_sepolicy -b arrow-13.0 device/qcom/sepolicy
