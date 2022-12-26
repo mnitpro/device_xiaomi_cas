@@ -20,10 +20,7 @@ package org.lineageos.settings.display;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
-
-public class DisplaySettingsActivity extends CollapsingToolbarBaseActivity {
+public class DcDimmingSettingsActivity extends PreferenceActivity {
 
     private static final String TAG_DCDIMMING = "dcdimming";
 
