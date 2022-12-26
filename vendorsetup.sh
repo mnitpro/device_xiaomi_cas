@@ -1,27 +1,54 @@
-echo 'Starting to clone stuffs needed for your device'
-rm -rf vendor/qcom/opensource/usb
-rm -rf device/qcom/sepolicy
+echo '\033[1m Starting to clone stuffs needed for your device \033[0m'
 
-echo 'Cloning Device tree [1/6]'
-# Device Tree
-#git clone --depth=1 https://github.com/zingrx/device_xiaomi_cas -b elix device/xiaomi/cas
+############################################################################
+##                      MANDATORY TREES FOR BUILD                         ##
+############################################################################
 
-echo 'Cloning Kernel tree [2/6]'
+echo "\033[1mCloning Kernel tree [1/3]\033[0m"
 # Kernel Tree
 git clone --depth=1 https://github.com/XayahSuSuSu/android_kernel_xiaomi_cas kernel/xiaomi/cas
 
-echo 'Cloning updated USB Drivers [3/6]'
-# Qcom USB
-git clone https://github.com/ArrowOS/android_vendor_qcom_opensource_usb -b arrow-13.0 vendor/qcom/opensource/usb
-
-echo 'Cloning Vendor tree [4/6]'
+echo '\033[1m Cloning Vendor tree [2/3] \033[0m'
 # Vendor Tree
 git clone --depth=1 https://gitlab.com/Xayah/vendor_xiaomi_cas vendor/xiaomi/cas
 
-echo 'Cloning Hardware Xiaomi tree [5/6]'
+echo '\033[1m Cloning Xiaomi HW Tree [3/3] \033[0m'
 # Hardware Xiaomi
 git clone https://github.com/PixelExperience/hardware_xiaomi hardware/xiaomi
 
-echo 'Cloning Device QCOM SEPolicy [6/6]'
-# Device SEPolicy
-git clone https://github.com/ArrowOS/android_device_qcom_sepolicy -b arrow-13.0 device/qcom/sepolicy
+############################################################################
+##              OPTIONAL TREES DEPENDING ON DEVICE NEEDS                  ##
+############################################################################
+
+echo 'Cloning USB Drivers [4/?]'
+# USB Tree
+rm -rf vendor/qcom/opensource/usb
+git clone https://github.com/ArrowOS/android_vendor_qcom_opensource_usb -b arrow-13.0 vendor/qcom/opensource/usb
+
+#echo 'Cloning QCOM SEPolicy [5/?]'
+# QCOM SEPolicy
+#rm -rf device/qcom/sepolicy
+#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy -b arrow-13.0 device/qcom/sepolicy
+#rm -rf device/qcom/sepolicy-legacy
+#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy-legacy device/qcom/sepolicy-legacy
+#rm -rf device/qcom/sepolicy-legacy-um
+#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy-legacy-um -b arrow-13.0 device/qcom/sepolicy-legacy-um
+#rm -rf device/qcom/sepolicy_vndr
+#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy_vndr -b arrow-13.0 device/qcom/sepolicy_vndr
+#rm -rf device/qcom/sepolicy_vndr-legacy-um
+#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy_vndr-legacy-um -b arrow-13.0 device/qcom/sepolicy_vndr-legacy-um
+
+#echo 'Cloning display HAL [6/?]'
+# Display HALs
+#rm -rf hardware/qcom-caf/sm8250/display
+#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_display -b spring-caf-sm8250 hardware/qcom-caf/sm8250/display
+
+#echo 'Cloning audio HAL [7/?]'
+# Audio HALs
+#rm -rf hardware/qcom-caf/sm8250/audio
+#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_audio -b spring-caf-sm8250 hardware/qcom-caf/sm8250/audio
+
+#echo 'Cloning media HAL [8/?]'
+# Media HALs
+#rm -rf hardware/qcom-caf/sm8250/media
+#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_media -b spring-caf-sm8250 hardware/qcom-caf/sm8250/media
