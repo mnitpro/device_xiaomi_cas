@@ -1,5 +1,5 @@
 android_app_import {
-	name: "GCamGOPrebuilt-SHAMIM_V5",
+	name: "gcamgo",
 	owner: "google",
 	apk: "GCamGOPrebuilt-SHAMIM_V5.apk",
 	presigned: true,
@@ -8,5 +8,5 @@ android_app_import {
 	},
 	privileged: true,
 	product_specific: true,
-	overrides: ["Camera2", "Snap"],
+	overrides: ["Snap"],
 }
