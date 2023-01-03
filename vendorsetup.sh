@@ -1,33 +1,75 @@
-echo 'Starting to clone stuffs needed for your device'
-# Stuff to remove
-#rm -rf hardware/qcom-caf/sm8250/display
-#rm -rf hardware/qcom-caf/sm8250/audio
-#rm -rf hardware/qcom-caf/sm8250/media
+NC='\033[0m'
+BBLACK='\033[1;30m'       # Black
+BRED='\033[1;31m'         # Red
+BGREEN='\033[1;32m'       # Green
+BYELLOW='\033[1;33m'      # Yellow
+BBLUE='\033[1;34m'        # Blue
+BPURPLE='\033[1;35m'      # Purple
+BCYAN='\033[1;36m'        # Cyan
+BWHITE='\033[1;37m'       # White
 
-echo 'Cloning Device tree [1/7]'
-# Device Tree
-git clone --depth=1 https://github.com/mnitpro/device_xiaomi_cas -b elix device/xiaomi/cas
+echo -e "                                             "
+echo -e "${BGREEN}******************************************************** ${NC}"
+echo -e "${BGREEN}*************** MANDATORY TREES FOR BUILD ************** ${NC}"
+echo -e "${BGREEN}******************************************************** ${NC}"
 
-echo 'Cloning Kernel tree [2/7]'
+echo -e "                                             "
+echo -e "${BCYAN}Cloning Kernel Tree [1/3] ${NC}"
 # Kernel Tree
 git clone --depth=1 https://github.com/XayahSuSuSu/android_kernel_xiaomi_cas kernel/xiaomi/cas
+echo -e "                                             "
 
-#echo 'Cloning DT extra [3/7]'
-# DT extra
-#git clone --depth=1 https://github.com/ArrowOS-Devices/android_device_xiaomi_extras device/xiaomi/extras
-
-echo 'Cloning Vendor tree [4/7]'
+echo -e "${BCYAN}Cloning Vendor Tree [2/3] ${NC}"
 # Vendor Tree
-git clone --depth=1 https://gitlab.com/Xayah/vendor_xiaomi_cas vendor/xiaomi/cas
+#rm -rf vendor/xiaomi/cas
+git clone --depth=1 https://gitlab.com/Xayah/vendor_xiaomi_cas -b arrow-13.0 vendor/xiaomi/cas
+echo -e "                                             "
 
-echo 'Cloning display HAL [5/7]'
+echo -e "${BCYAN}Cloning Xiaomi HW Tree [3/3] ${NC}"
+# Hardware Xiaomi
+git clone https://github.com/PixelExperience/hardware_xiaomi hardware/xiaomi
+
+echo -e "                                             "
+echo -e "${BYELLOW}${BOLD}******************************************************** ${NC}"
+echo -e "${BYELLOW}${BOLD}******************** OPTIONAL TREES ******************** ${NC}"
+echo -e "${BYELLOW}${BOLD}******************************************************** ${NC}"
+
+# COMMENT OUT UNNECESSARY TREES BELOW AS YOU WISH
+
+echo -e "                                             "
+echo -e "${BPURPLE}Cloning USB Drivers [1/5]${NC}"
+# USB Tree
+rm -rf vendor/qcom/opensource/usb
+git clone https://github.com/ArrowOS/android_vendor_qcom_opensource_usb -b arrow-13.0 vendor/qcom/opensource/usb
+
+echo -e "                                             "
+echo -e "${BPURPLE}Cloning QCOM SEPolicy [2/5]${NC}"
+# QCOM SEPolicy
+rm -rf device/qcom/sepolicy
+#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy -b arrow-13.0 device/qcom/sepolicy
+rm -rf device/qcom/sepolicy-legacy
+#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy-legacy device/qcom/sepolicy-legacy
+rm -rf device/qcom/sepolicy-legacy-um
+#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy-legacy-um -b arrow-13.0 device/qcom/sepolicy-legacy-um
+rm -rf device/qcom/sepolicy_vndr
+#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy_vndr -b arrow-13.0 device/qcom/sepolicy_vndr
+rm -rf device/qcom/sepolicy_vndr-legacy-um
+#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy_vndr-legacy-um -b arrow-13.0 device/qcom/sepolicy_vndr-legacy-um
+
+echo -e "                                             "
+echo -e "${BPURPLE}Cloning display HAL [3/5]${NC}"
 # Display HALs
-git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_display -b spring-caf-sm8250 hardware/qcom-caf/sm8250/display
+#rm -rf hardware/qcom-caf/sm8250/display
+#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_display -b spring-caf-sm8250 hardware/qcom-caf/sm8250/display
 
-#echo 'Cloning audio HAL [6/7]'
+echo -e "                                             "
+echo -e "${BPURPLE}Cloning audio HAL [4/5]${NC}"
 # Audio HALs
-#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_audio -b spring-caf-sm8250 hardware/qcom-caf/sm8250/audio
+#rm -rf hardware/qcom-caf/sm8250/audio
+#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_audio -b taffy-caf-sm8250 hardware/qcom-caf/sm8250/audio
 
-#echo 'Cloning media HAL [7/7]'
+echo -e "                                             "
+echo -e "${BPURPLE}Cloning media HAL [5/5]${NC}"
 # Media HALs
-#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_media -b spring-caf-sm8250 hardware/qcom-caf/sm8250/media
+#rm -rf hardware/qcom-caf/sm8250/media
+#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_media -b taffy-caf-sm8250 hardware/qcom-caf/sm8250/media
