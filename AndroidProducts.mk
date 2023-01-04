@@ -5,9 +5,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/evolution_cas.mk
+    $(LOCAL_DIR)/lineage_cas.mk
 
 COMMON_LUNCH_CHOICES := \
-    evolution_cas-eng \
-    evolution_cas-user \
-    evolution_cas-userdebug
+    lineage_cas-userdebug
