@@ -54,7 +54,7 @@ TARGET_HAS_UDFPS := true
 # Allow usage of custom binary linker (LD), default is false
 TARGET_KERNEL_OPTIONAL_LD := false
 
-TARGET_USE_PIXEL_FINGERPRINT := false
+TARGET_USE_PIXEL_FINGERPRINT := true
 TARGET_OPTOUT_GOOGLE_TELEPHONY := false
 
 # Quick Tap 
@@ -63,4 +63,5 @@ TARGET_SUPPORTS_QUICK_TAP := true
 #Face unlock 
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
-BUILD_FINGERPRINT := Xiaomi/cas/cas:12/RKQ1.211001.001/V13.0.6.0.SJJCNXM:user/release-keys
+#BUILD_FINGERPRINT := Xiaomi/cas/cas:12/RKQ1.211001.001/V13.0.6.0.SJJCNXM:user/release-keys
+BUILD_FINGERPRINT := google/raven/raven:13/TP1A.220905.004/8927612:user/release-keys
