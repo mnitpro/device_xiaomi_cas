@@ -388,9 +388,6 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
 
-# SEPolicy
-include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
-
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 29
 
