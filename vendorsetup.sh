@@ -45,15 +45,15 @@ git clone https://github.com/ArrowOS/android_vendor_qcom_opensource_usb -b arrow
 echo -e "                                             "
 echo -e "${BPURPLE}Cloning QCOM SEPolicy [2/5]${NC}"
 # QCOM SEPolicy
-rm -rf device/qcom/sepolicy
+#rm -rf device/qcom/sepolicy
 #git clone https://github.com/ArrowOS/android_device_qcom_sepolicy -b arrow-13.0 device/qcom/sepolicy
-rm -rf device/qcom/sepolicy-legacy
+#rm -rf device/qcom/sepolicy-legacy
 #git clone https://github.com/ArrowOS/android_device_qcom_sepolicy-legacy device/qcom/sepolicy-legacy
-rm -rf device/qcom/sepolicy-legacy-um
+#rm -rf device/qcom/sepolicy-legacy-um
 #git clone https://github.com/ArrowOS/android_device_qcom_sepolicy-legacy-um -b arrow-13.0 device/qcom/sepolicy-legacy-um
-rm -rf device/qcom/sepolicy_vndr
+#rm -rf device/qcom/sepolicy_vndr
 #git clone https://github.com/ArrowOS/android_device_qcom_sepolicy_vndr -b arrow-13.0 device/qcom/sepolicy_vndr
-rm -rf device/qcom/sepolicy_vndr-legacy-um
+#rm -rf device/qcom/sepolicy_vndr-legacy-um
 #git clone https://github.com/ArrowOS/android_device_qcom_sepolicy_vndr-legacy-um -b arrow-13.0 device/qcom/sepolicy_vndr-legacy-um
 
 echo -e "                                             "
