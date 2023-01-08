@@ -98,24 +98,15 @@ PRODUCT_PACKAGES += \
     audio.primary.kona \
     audio.r_submix.default \
     audio.usb.default \
-    libaacwrapper \
-    libaudiopreprocessing \
     libbatterylistener \
-    libbundlewrapper \
     libcomprcapture \
-    libdownmix \
-    libdynproc \
-    libeffectproxy \
     libhdmiedid \
     libhfp \
-    libldnhncr \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libreverbwrapper \
     libsndmonitor \
     libtinycompress \
-    libvisualizer \
     libvolumelistener
 
 PRODUCT_COPY_FILES += \
@@ -143,26 +134,37 @@ PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.touchfeature@1.0.vendor
 
 # Bluetooth
+-include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-commonsys-intf-board.mk
+
+BOARD_HAVE_QCOM_FM := false
+
+$(call inherit-product-if-exists, vendor/qcom/opensource/commonsys-intf/bluetooth/bt-system-opensource-product.mk)
+
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
     android.hardware.bluetooth.audio-impl \
     com.dsi.ant@1.0.vendor \
+    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
 
+ifneq (,$(wildcard vendor/qcom/opensource/commonsys/system/bt))
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.bluetooth.library_name=libbluetooth_qti.so
+endif
+
+# Build Fingerprint spoofing to allow Pixel-exclusive apps
+ifeq ($(TARGET_USE_PIXEL_FINGERPRINT), true)
+    BUILD_FINGERPRINT := "google/cheetah/cheetah:13/TQ1A.230105.002.A1/9409646:user/release-keys"
+    PRODUCT_BUILD_PROP_OVERRIDES += \
+        PRIVATE_BUILD_DESC="cheetah-user 13 TQ1A.230105.002.A1 9409646 release-keys"
+else 
+    BUILD_FINGERPRINT := "Xiaomi/cas/cas:12/RKQ1.211001.001/V13.0.6.0.SJJCNXM:user/release-keys"
+endif
+
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service_64 \
-    libcamera2ndk_vendor \
-    libdng_sdk.vendor \
-    libgui_vendor \
-    vendor.qti.hardware.camera.device@1.0.vendor \
-    vendor.qti.hardware.camera.postproc@1.0.vendor
-
-# Component overrides
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
+    Camera2
 
 # Configstore
 PRODUCT_PACKAGES += \
@@ -323,9 +325,7 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-system 
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-system
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
@@ -356,12 +356,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
-# Prebuilts
-PRODUCT_PACKAGES += \
-    gcamgo
-    adaway
-
 # QMI
+TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
+
 PRODUCT_PACKAGES += \
     libjson
 
@@ -390,10 +387,6 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
-
-# Shims
-PRODUCT_PACKAGES += \
-    lib-watermarkshim
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 29
