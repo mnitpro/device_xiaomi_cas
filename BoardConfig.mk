@@ -114,12 +114,17 @@ BOARD_KERNEL_CMDLINE := \
     service_locator.enable=1 \
     swiotlb=2048
 
+# Configure Prebuilt Kernel
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel/kernel
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/kernel/dtbo.img
+BOARD_PREBUILT_DTBIMAGE := $(DEVICE_PATH)/prebuilts/kernel/dtb.img
 
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 
-TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc
 TARGET_KERNEL_SOURCE := kernel/xiaomi/cas
 TARGET_KERNEL_CONFIG := cas_defconfig
