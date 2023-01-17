@@ -16,6 +16,7 @@ echo -e "${BGREEN}******************************************************** ${NC}
 echo -e "                                             "
 echo -e "${BCYAN}Cloning Kernel Tree [1/3] ${NC}"
 # Kernel Tree
+#rm -rf kernel/xiaomi/cas
 git clone --depth=1 https://github.com/XayahSuSuSu/android_kernel_xiaomi_cas kernel/xiaomi/cas
 echo -e "                                             "
 
@@ -39,7 +40,7 @@ echo -e "${BYELLOW}${BOLD}******************************************************
 echo -e "                                             "
 echo -e "${BPURPLE}Cloning USB Drivers [1/5]${NC}"
 # USB Tree
-rm -rf vendor/qcom/opensource/usb
+#rm -rf vendor/qcom/opensource/usb
 git clone https://github.com/ArrowOS/android_vendor_qcom_opensource_usb -b arrow-13.0 vendor/qcom/opensource/usb
 
 echo -e "                                             "
