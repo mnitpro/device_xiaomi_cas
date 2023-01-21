@@ -1,4 +1,4 @@
-# All blobs below are extracted - from V13.0.1.0.SJJCNXM, unless pinned
+# All blobs below are extracted - from V13.0.6.0.SJJCNXM, unless pinned
 
 # ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
@@ -36,6 +36,7 @@ vendor/lib64/libsdsprpc.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Speech_Decoder.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDADV_Encoder.so
 vendor/lib/rfsa/adsp/capi_v2_cirrus_sp.so
+vendor/lib/rfsa/adsp/hrtf5c.bin
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libarcsoft_hdrplus_hvx_skel.so
 vendor/lib/rfsa/adsp/libbitml_nsp_skel.so
@@ -74,7 +75,7 @@ vendor/lib64/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib64/rfsa/adsp/libsns_low_lat_stream_skel.so
 
 # Alarm
--product/app/PowerOffAlarm/PowerOffAlarm.apk
+product/app/PowerOffAlarm/PowerOffAlarm.apk
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
 vendor/bin/power_off_alarm
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
@@ -144,15 +145,33 @@ vendor/lib64/soundfx/libshoebox.so
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib/hw/audio.bluetooth_qti.default.so
+vendor/lib/hw/com.dsi.ant@1.0-impl.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
+vendor/lib/btaudio_offload_if.so
+vendor/lib/libbluetooth_audio_session_qti.so
+vendor/lib/libbluetooth_audio_session_qti_2_1.so
 vendor/lib/libbt-hidlclient.so
 vendor/lib/libbtnv.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/hw/audio.bluetooth_qti.default.so
+vendor/lib64/hw/com.dsi.ant@1.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
+vendor/lib64/btaudio_offload_if.so
+vendor/lib64/libbluetooth_audio_session_qti.so
+vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
@@ -660,8 +679,8 @@ vendor/lib64/libcdsprpc.so
 vendor/lib64/libsysmon_cdsp_skel.so
 
 # CNE
--vendor/app/CneApp/CneApp.apk
--vendor/app/IWlanService/IWlanService.apk
+vendor/app/CneApp/CneApp.apk
+vendor/app/IWlanService/IWlanService.apk
 vendor/bin/cnd
 vendor/etc/cne/mwqem.conf
 vendor/etc/cne/profileMwqem.xml
@@ -767,6 +786,10 @@ vendor/lib64/libtinyxml2_1.so
 vendor/etc/ltm_config_xiaomi_42_02_0a_cmd_mode_dsc_dsi_panel.xml
 vendor/etc/qdcm_calib_data_xiaomi_42_02_0a_cmd_mode_dsc_dsi_panel.xml
 
+# Display Gralloc
+vendor/lib64/libgralloccore.so
+vendor/lib64/libgrallocutils.so
+
 # Display Postprocessing
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/ppd
@@ -783,7 +806,7 @@ vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
 # DPM
--system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
+system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 framework/tcmclient.jar
 system_ext/bin/dpmd
 system_ext/etc/dpm/dpm.conf
@@ -830,7 +853,7 @@ vendor/lib64/libtzdrmgenprov.so
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
 # DRM (Widevine)
--vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
+vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 vendor/lib/libbase64.so
@@ -920,9 +943,9 @@ vendor/firmware/14_ringTone4_RTP.bin
 vendor/firmware/140_cfmKillOne_RTP.bin
 vendor/firmware/141_cfmHeadshot_RTP.bin
 vendor/firmware/142_cfmMultiKill_RTP.bin
-vendor/firmware/143_cfmKillOne_Strong_RTP.bin
-vendor/firmware/144_cfmHeadshot_Strong_RTP.bin
-vendor/firmware/145_cfmMultiKill_Strong_RTP.bin
+vendor/firmware/143_cfmKillOneStrong_RTP.bin
+vendor/firmware/144_cfmHeadshotStrong_RTP.bin
+vendor/firmware/145_cfmMultiKillStrong_RTP.bin
 vendor/firmware/146_cfmWeaponGrenadeExplode_RTP.bin
 vendor/firmware/147_cfmWeaponGrenadeKillOne_RTP.bin
 vendor/firmware/148_cfmImpactFleshNormal_RTP.bin
@@ -979,6 +1002,7 @@ vendor/firmware/42_MiJazz_RTP.bin
 vendor/firmware/43_MiRemix_RTP.bin
 vendor/firmware/44_MountainSpring_RTP.bin
 vendor/firmware/45_Orange_RTP.bin
+vendor/firmware/46_WindChime_RTP.bin
 vendor/firmware/47_SpaceAge_RTP.bin
 vendor/firmware/48_ToyRobot_RTP.bin
 vendor/firmware/49_Vigor_RTP.bin
@@ -1018,7 +1042,7 @@ vendor/firmware/78_fodMotion2_RTP.bin
 vendor/firmware/79_fodMotion3_RTP.bin
 vendor/firmware/8_ringTone3_P_RTP.bin
 vendor/firmware/80_fodMotion4_RTP.bin
-vendor/firmware/81_fodMotion_Aurora_RTP.bin
+vendor/firmware/81_fodMotionAurora_RTP.bin
 vendor/firmware/82_FaceIDWrong2_RTP.bin
 vendor/firmware/83_uninstallAnimation_RTP.bin
 vendor/firmware/84_uninstallDialog_RTP.bin
@@ -1226,164 +1250,166 @@ vendor/firmware/vehicle_collision_RTP.bin
 vendor/firmware/vehicle_dacia_RTP.bin
 vendor/firmware/vehicle_moto_RTP.bin
 vendor/firmware/vehicle_plane_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/0_click_P_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/1_doubelClick_P_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/10_ringTone4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/101_offlineCountdown_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/102_sceneBombInjury_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/103_sceneBomb_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/104_doorOpen_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/106_sceneStep_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/107_crawl_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/108_scopeOn_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/109_scopeOff_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/11_ringTone4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/110_magazineQuick_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/111_grenade_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/112_sceneGetshot_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/113_grenadeExplosion_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/114_punch_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/115_pan_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/116_bandage_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/118_sceneJump_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/119_vehiclePlane_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/12_ringTone4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/120_sceneOpenparachute_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/121_sceneCloseparachute_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/122_vehicleCollision_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/123_vehicleBuggy_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/124_vehicleDacia_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/125_vehicleMoto_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/126_firearmsAkm_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/127_firearmsM16a4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/128_firearmsAwm_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/13_ringTone4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/130_firearmsMini14_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/131_firearmsVss_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/132_firearmsQbz_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/133_firearmsUmp9_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/134_firearmsDp28_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/135_firearmsS1897_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/137_firearmsP18c_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/14_ringTone4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/140_cfmKillOne_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/141_cfmHeadshot_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/142_cfmMultiKill_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/143_cfmKillOne_Strong_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/144_cfmHeadshot_Strong_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/145_cfmMultiKill_Strong_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/146_cfmWeaponGrenadeExplode_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/147_cfmWeaponGrenadeKillOne_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/148_cfmImpactFleshNormal_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/149_cfmWeaponC4Installed_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/15_ringTone4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/150_cfmHeroAppear_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/151_cfmUIRewardOpenBox_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/152_cfmUIRewardTask_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/153_cfmWeaponBLTShoot_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/154_Atlantis_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/155_DigitalUniverse_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/156_Reveries_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/157_fodMotionTriang_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/158_fodMotionFlare_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/159_fodMotionRipple_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/16_ringTone4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/160_fodMotionSpiral_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/161_gameboxLaunch_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/162_GestureBackPull_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/163_GestureBackRelease_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/164_alert_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/165_feedbackNegativeLight_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/166_feedbackNeutral_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/167_feedbackPositive_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/168_fingerprintRecord_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/169_lockdown_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/17_ringTone4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/171_todoAlldone_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/172_uninstallAnimationIcon_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/18_ringTone4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/19_ringTone4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/192_hapticsVideo_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/2_tick_P_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/20_ringTone4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/23_Candy_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/24_Carousel_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/25_Celesta_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/26_Childhood_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/27_Country_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/28_Cowboy_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/3_thud_P_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/30_Fairyland_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/31_Fantasy_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/32_FieldTrip_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/33_Glee_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/35_IceLatte_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/36_KungFu_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/38_Lollipop_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/39_MiMix2_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/4_pop_P_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/40_Mi_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/41_MiHouse_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/42_MiJazz_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/43_MiRemix_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/44_MountainSpring_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/45_Orange_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/47_SpaceAge_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/48_ToyRobot_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/49_Vigor_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/5_heavyClick_P_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/50_Bottle_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/51_Bubble_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/52_Bullfrog_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/521_AcousticGuitar_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/53_Burst_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/54_Chirp_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/55_Clank_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/56_Crystal_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/57_FadeIn_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/58_FadeOut_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/59_Flute_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/6_ringTone1_P_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/60_Fresh_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/61_Frog_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/62_Guitar_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/63_Harp_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/64_IncomingMessage_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/65_MessageSent_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/66_Moment_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/67_NotificationXylophone_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/68_Potion_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/69_Radar_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/7_ringTone2_P_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/70_Spring_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/71_Swoosh_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/72_GestureUpSlide_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/73_fodMotionPlanet_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/74_ChargeWire_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/75_ChargeWireless_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/76_UnlockFailed_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/77_fodMotion1_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/78_fodMotion2_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/79_fodMotion3_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/8_ringTone3_P_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/80_fodMotion4_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/81_fodMotion_Aurora_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/82_FaceIDWrong2_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/83_uninstallAnimation_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/84_uninstallDialog_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/85_screenshot_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/86_lockscreenCameraEntry_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/87_launcherEdit_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/88_launcherIconSelection_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/9_ringTone4_P_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/90_taskCleanAll_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/91_newIconFolder_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/92_notificationRemove_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/93_notificationCleanall_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/96_nfcCard_RTP.bin
-vendor/firmware/vibrator_firmware_aidl/98_nfcCardSlow_RTP.bin
 vendor/firmware/Vigor_RTP.bin
 vendor/firmware/WindChime_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/521_AcousticGuitar_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/192_hapticsVideo_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/172_uninstallAnimationIcon_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/171_todoAlldone_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/169_lockdown_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/168_fingerprintRecord_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/167_feedbackPositive_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/166_feedbackNeutral_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/165_feedbackNegativeLight_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/164_alert_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/163_GestureBackRelease_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/162_GestureBackPull_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/161_gameboxLaunch_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/160_fodMotionSpiral_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/159_fodMotionRipple_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/158_fodMotionFlare_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/157_fodMotionTriang_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/156_Reveries_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/155_DigitalUniverse_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/154_Atlantis_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/153_cfmWeaponBLTShoot_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/152_cfmUIRewardTask_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/151_cfmUIRewardOpenBox_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/150_cfmHeroAppear_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/149_cfmWeaponC4Installed_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/148_cfmImpactFleshNormal_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/147_cfmWeaponGrenadeKillOne_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/146_cfmWeaponGrenadeExplode_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/145_cfmMultiKillStrong_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/144_cfmHeadshotStrong_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/143_cfmKillOneStrong_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/142_cfmMultiKill_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/141_cfmHeadshot_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/140_cfmKillOne_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/137_firearmsP18c_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/135_firearmsS1897_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/134_firearmsDp28_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/133_firearmsUmp9_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/132_firearmsQbz_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/131_firearmsVss_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/130_firearmsMini14_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/128_firearmsAwm_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/127_firearmsM16a4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/126_firearmsAkm_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/125_vehicleMoto_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/124_vehicleDacia_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/123_vehicleBuggy_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/122_vehicleCollision_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/121_sceneCloseparachute_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/120_sceneOpenparachute_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/119_vehiclePlane_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/118_sceneJump_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/116_bandage_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/115_pan_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/114_punch_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/113_grenadeExplosion_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/112_sceneGetshot_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/111_grenade_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/110_magazineQuick_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/109_scopeOff_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/108_scopeOn_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/107_crawl_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/106_sceneStep_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/104_doorOpen_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/103_sceneBomb_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/102_sceneBombInjury_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/101_offlineCountdown_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/98_nfcCardSlow_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/96_nfcCard_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/93_notificationCleanall_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/92_notificationRemove_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/91_newIconFolder_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/90_taskCleanAll_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/88_launcherIconSelection_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/87_launcherEdit_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/86_lockscreenCameraEntry_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/85_screenshot_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/84_uninstallDialog_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/83_uninstallAnimation_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/82_FaceIDWrong2_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/81_fodMotionAurora_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/80_fodMotion4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/79_fodMotion3_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/78_fodMotion2_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/77_fodMotion1_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/76_UnlockFailed_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/75_ChargeWireless_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/74_ChargeWire_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/73_fodMotionPlanet_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/72_GestureUpSlide_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/71_Swoosh_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/70_Spring_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/69_Radar_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/68_Potion_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/67_NotificationXylophone_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/66_Moment_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/65_MessageSent_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/64_IncomingMessage_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/63_Harp_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/62_Guitar_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/61_Frog_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/60_Fresh_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/59_Flute_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/58_FadeOut_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/57_FadeIn_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/56_Crystal_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/55_Clank_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/54_Chirp_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/53_Burst_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/52_Bullfrog_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/51_Bubble_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/50_Bottle_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/49_Vigor_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/48_ToyRobot_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/47_SpaceAge_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/46_WindChime_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/45_Orange_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/44_MountainSpring_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/43_MiRemix_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/42_MiJazz_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/41_MiHouse_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/40_Mi_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/39_MiMix2_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/38_Lollipop_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/36_KungFu_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/35_IceLatte_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/33_Glee_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/32_FieldTrip_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/31_Fantasy_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/30_Fairyland_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/28_Cowboy_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/27_Country_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/26_Childhood_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/25_Celesta_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/24_Carousel_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/23_Candy_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/20_ringTone4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/19_ringTone4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/18_ringTone4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/17_ringTone4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/16_ringTone4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/15_ringTone4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/14_ringTone4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/13_ringTone4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/12_ringTone4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/11_ringTone4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/10_ringTone4_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/9_ringTone4_P_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/8_ringTone3_P_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/7_ringTone2_P_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/6_ringTone1_P_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/5_heavyClick_P_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/4_pop_P_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/3_thud_P_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/2_tick_P_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/1_doubelClick_P_RTP.bin
+vendor/firmware/vibrator_firmware_aidl/0_click_P_RTP.bin
+vendor/firmware/wigig/wigig.ini
 
 # FM
 vendor/lib/vendor.qti.hardware.fm@1.0.so
@@ -1396,7 +1422,7 @@ vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # GNSS
--vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml
+vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti
 vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc
 vendor/lib/hw/android.hardware.gnss@2.1-impl-qti.so
@@ -1424,7 +1450,7 @@ vendor/etc/sap.conf
 vendor/etc/xtwifi.conf
 
 # GPS
--vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
+vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
 vendor/bin/garden_app
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
@@ -1469,7 +1495,6 @@ vendor/lib64/vendor.qti.gnss@4.0.so
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so
 
 # Graphics
--vendor/app/com.qualcomm.qti.gpudrivers.kona.api30/com.qualcomm.qti.gpudrivers.kona.api30.apk;PRESIGNED
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -1508,8 +1533,8 @@ vendor/lib/hw/vulkan.adreno.so
 vendor/lib64/hw/vulkan.adreno.so
 
 # HotwordEnrollment - from STARGlobal V12.5.3.0.SKAMIXM
--product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk|3a0089f1a2d5b5acca1cec8330db5c5f3d738f2a
--product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk|5b6439d4ee66206fd4b1159294b363920fe39a82
+product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk|3a0089f1a2d5b5acca1cec8330db5c5f3d738f2a
+product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk|5b6439d4ee66206fd4b1159294b363920fe39a82
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|563a58554d9c0dd0608552b644fbf74519a447bb
 system_ext/framework/com.android.hotwordenrollment.common.util.jar|c764b636e0be426a66be09dd08ab9c1921327ef0
 
@@ -1577,7 +1602,7 @@ vendor/etc/seccomp_policy/codec2.vendor.ext-arm.policy
 vendor/etc/seccomp_policy/mediacodec.policy
 
 # Mlipay
--vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mlipay.xml
+vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mlipay.xml
 vendor/bin/mlipayd@1.1
 vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc
 vendor/lib64/libmlipay.so
@@ -1587,8 +1612,8 @@ vendor/lib64/libmlipay@1.1.so
 vendor/lib/libsn100u_fw.so
 
 # Neural Networks
--vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti-hta.xml
--vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti.xml
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti-hta.xml
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti.xml
 vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-qti
 vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc
 vendor/lib64/libhexagon_nn_stub.so
@@ -1761,9 +1786,9 @@ vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
 # RIL
--system_ext/app/QtiTelephony/QtiTelephony.apk
--system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
--system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+system_ext/app/QtiTelephony/QtiTelephony.apk
+system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 system_ext/etc/permissions/extphonelib.xml
 system_ext/etc/permissions/qcrilhook.xml
@@ -1862,8 +1887,8 @@ vendor/radio/qcril_database/upgrade/8_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/9_version_update_ecc_table.sql
 
 # RIL (IMS)
--system_ext/app/ImsRcsService/ImsRcsService.apk
--system_ext/priv-app/ims/ims.apk
+system_ext/app/ImsRcsService/ImsRcsService.apk
+system_ext/priv-app/ims/ims.apk
 system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml
 system_ext/framework/vendor.qti.ims.factory-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.factory-V1.1-java.jar
@@ -2112,7 +2137,7 @@ vendor/lib64/libscveObjectTracker_stub.so
 vendor/lib64/libscveObjectTracker.so
 
 # Soter
--vendor/app/SoterService/SoterService.apk
+vendor/app/SoterService/SoterService.apk
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
 vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
@@ -2150,13 +2175,13 @@ vendor/etc/thermal-video.conf
 vendor/etc/thermald-devices.conf
 
 # Limits HAL
--vendor/etc/vintf/manifest/vendor.qti.hardware.limits@1.0-service.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.limits@1.0-service.xml
 vendor/bin/hw/vendor.qti.hardware.limits@1.0-service
 vendor/etc/init/vendor.qti.hardware.limits@1.0-service.rc
 vendor/lib64/vendor.qti.hardware.limits@1.0.so
 
 # Time
--vendor/app/TimeService/TimeService.apk
+vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 vendor/lib64/libtime_genoff.so
