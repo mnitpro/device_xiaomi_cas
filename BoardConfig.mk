@@ -50,6 +50,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
+TARGET_USE_QTI_BT_STACK := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := kona
@@ -60,12 +61,6 @@ BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 
-# Camera
-TARGET_USES_QTI_CAMERA_DEVICE := true
-
-# DRM
-TARGET_ENABLE_MEDIADRM_64 := true
-
 # DTB
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_BOOT_HEADER_VERSION := 2
@@ -75,18 +70,19 @@ BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_KERNEL_SEPARATED_DTBO := true
 
 # Display
-include hardware/qcom-caf/sm8250/display/config/display-board.mk
-
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x546C00000000
 TARGET_NO_RAW10_CUSTOM_FORMAT := true
 TARGET_SCREEN_DENSITY := 440
+TARGET_USES_DISPLAY_RENDER_INTENTS := true
+TARGET_USES_GRALLOC4 := true
+TARGET_USES_HWC2 := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
 # Fingerprint
 TARGET_USES_FOD_ZPOS := true
-TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.xiaomi_kona
+TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/xiaomi:libudfps_extension.xiaomi
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
@@ -115,7 +111,6 @@ BOARD_KERNEL_CMDLINE := \
     msm_rtb.filter=0x237 \
     reboot=panic_warm \
     service_locator.enable=1 \
-    androidboot.selinux=permissive \
     swiotlb=2048
 
 BOARD_KERNEL_BASE := 0x00000000
@@ -191,10 +186,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # SELinux
-include device/qcom/sepolicy_vndr/SEPolicy.mk
-
-# Sepolicy
-SELINUX_IGNORE_NEVERALLOWS := true
+include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
@@ -210,6 +202,7 @@ WIFI_DRIVER_DEFAULT := qca_cld3
 WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wlan"
 WIFI_DRIVER_STATE_OFF := "OFF"
 WIFI_DRIVER_STATE_ON := "ON"
+WIFI_FEATURE_HOSTAPD_11AX := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -220,6 +213,3 @@ CONFIG_IEEE80211AX := true
 
 # Inherit from the proprietary version
 include vendor/xiaomi/cas/BoardConfigVendor.mk
-
-# Inherit from proprietary files for miuicamera
--include vendor/xiaomi/cas-miuicamera/products/board.mk

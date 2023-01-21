@@ -19,11 +19,11 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/cas/cas-vendor.mk)
 
-# SDCardFS Deprecation ## https://source.android.com/devices/storage/sdcardfs-deprecate
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
 # Call the MiuiCamera setup
 $(call inherit-product-if-exists, vendor/xiaomi/cas-miuicamera/products/miuicamera.mk)
+
+# SDCardFS Deprecation ## https://source.android.com/devices/storage/sdcardfs-deprecate
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Platform
 PRODUCT_BOARD_PLATFORM := kona
@@ -98,24 +98,15 @@ PRODUCT_PACKAGES += \
     audio.primary.kona \
     audio.r_submix.default \
     audio.usb.default \
-    libaacwrapper \
-    libaudiopreprocessing \
     libbatterylistener \
-    libbundlewrapper \
     libcomprcapture \
-    libdownmix \
-    libdynproc \
-    libeffectproxy \
     libhdmiedid \
     libhfp \
-    libldnhncr \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libreverbwrapper \
     libsndmonitor \
     libtinycompress \
-    libvisualizer \
     libvolumelistener
 
 PRODUCT_COPY_FILES += \
@@ -133,11 +124,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/lineage/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.kona
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi
+
+PRODUCT_PACKAGES += \
+    libudfpshandler
 
 PRODUCT_PACKAGES += \
     vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor \
-    vendor.xiaomi.hardware.fingerprintextension@1.0.vendor \
     vendor.xiaomi.hardware.touchfeature@1.0.vendor
 
 # Bluetooth
@@ -145,8 +138,23 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
     android.hardware.bluetooth.audio-impl \
     com.dsi.ant@1.0.vendor \
+    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
+
+ifneq (,$(wildcard vendor/qcom/opensource/commonsys/system/bt))
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.bluetooth.library_name=libbluetooth_qti.so
+endif
+
+# Build Fingerprint spoofing to allow Pixel-exclusive apps
+ifeq ($(TARGET_USE_PIXEL_FINGERPRINT), true)
+    BUILD_FINGERPRINT := "google/cheetah/cheetah:13/TQ1A.230105.002.A1/9409646:user/release-keys"
+    PRODUCT_BUILD_PROP_OVERRIDES += \
+        PRIVATE_BUILD_DESC="cheetah-user 13 TQ1A.230105.002.A1 9409646 release-keys"
+else 
+    BUILD_FINGERPRINT := "Xiaomi/cas/cas:12/RKQ1.211001.001/V13.0.6.0.SJJCNXM:user/release-keys"
+endif
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -158,36 +166,41 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
-# CameraGO
 PRODUCT_PACKAGES += \
-    GCamGOPrebuilt-SHAMIM_V5
-
-#AdAway
-PRODUCT_PACKAGES += \
-    AdAwayPrebuilt
-
-# Component overrides
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
+    libpiex_shim
 
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
 
 # Display
-$(call inherit-product, hardware/qcom-caf/sm8250/display/config/display-product.mk)
-$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-product.mk)
-$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk)
-$(call inherit-product, vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk)
-$(call inherit-product, vendor/qcom/opensource/display/config/display-product-vendor.mk)
-
-BOARD_DISPLAY_HAL := hardware/qcom-caf/sm8250/display
-TARGET_BOARD_PLATFORM := kona
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.mapper@3.0-impl-qti-display \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    gralloc.kona \
+    libdisplayconfig.qti \
+    libdisplayconfig.system.qti \
+    libqdMetaData \
+    libqdMetaData.system \
+    libtinyxml \
+    memtrack.kona \
+    vendor.display.config@1.0 \
+    vendor.display.config@1.11.vendor \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor \
+    vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.composer-service \
+    vendor.qti.hardware.display.mapper@1.1.vendor \
+    vendor.qti.hardware.display.mapper@2.0.vendor \
+    vendor.qti.hardware.display.mapper@3.0.vendor \
+    vendor.qti.hardware.display.mapper@4.0.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
-    android.hardware.drm@1.4-service.clearkey
+    android.hardware.drm-service.clearkey
 
 # Fastboot
 PRODUCT_PACKAGES += \
@@ -233,13 +246,14 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.class_main.sh \
     init.mdm.sh \
+    init.mi.btmac.sh \
     init.mi.usb.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
     init.qcom.sh \
     init.qti.dcvs.sh \
-    init.target.rc\
+    init.target.rc \
     ueventd.qcom.rc
 
 # IPACM
@@ -329,9 +343,7 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-elixir 
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-system
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
@@ -347,7 +359,6 @@ PRODUCT_PACKAGES += \
     DeviceTelephony
 
 # Partitions
-PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Parts
@@ -363,6 +374,8 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
 # QMI
+TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
+
 PRODUCT_PACKAGES += \
     libjson
 
@@ -392,10 +405,6 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
 
-# Shims
-PRODUCT_PACKAGES += \
-    lib-watermarkshim
-
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 29
 
@@ -422,7 +431,8 @@ PRODUCT_BOOT_JARS += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.qti
+    android.hardware.thermal@2.0-service.qti \
+    android.hardware.thermal@2.0
 
 # Touchscreen
 PRODUCT_PACKAGES += \
