@@ -373,6 +373,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
+# Prebuilts
+PRODUCT_PACKAGES += \
+    adaway \
+    gcamgo
+
 # QMI
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 
