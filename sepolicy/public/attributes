@@ -1,1 +1,8 @@
-hal_attribute_lineage(touchfeature)
+attribute hal_touchfeature;
+attribute vendor_fingerprint_data_file;
+attribute hal_touchfeature_server;
+attribute vendor_persist_camera_prop;
+attribute vendor_payment_security_prop;
+attribute vendor_fp_prop;
+attribute hal_touchfeature_client;
+attribute hal_mlipay_default_exec;
