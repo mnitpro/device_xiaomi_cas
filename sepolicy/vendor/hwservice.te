@@ -1,5 +1,1 @@
 type hal_touchfeature_hwservice, hwservice_manager_type;
-<<<<<<< HEAD
-type hal_mlipay_hwservice, hwservice_manager_type;
-=======
->>>>>>> parent of a3eaf1a... cas: sepolicy: Address rules for Alipay
