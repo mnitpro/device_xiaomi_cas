@@ -27,6 +27,11 @@ TARGET_SUPPORTS_CALL_RECORDING := true
 # AOSP Recovery 
 TARGET_USES_AOSP_RECOVERY := true
 
+# Pixel Launcher Configs
+PIXEL_LAUNCHER_VARIANT := ammit
+ICONS_VARIANT := teamfilesicons
+AOSP_ENHANCER := false
+
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
 
