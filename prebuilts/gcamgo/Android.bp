@@ -1,7 +1,7 @@
 android_app_import {
-	name: "GCamGOPrebuilt-SHAMIM_V5",
+	name: "gcamgo",
 	owner: "google",
-	apk: "GCamGOPrebuilt-SHAMIM_V5.apk",
+	apk: "gcamgo.apk",
 	presigned: true,
 	dex_preopt: {
 		enabled: false,
