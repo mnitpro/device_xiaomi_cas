@@ -159,6 +159,7 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
+
 # Component overrides
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
@@ -226,13 +227,14 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.class_main.sh \
     init.mdm.sh \
+    init.mi.btmac.sh \
     init.mi.usb.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
     init.qcom.sh \
     init.qti.dcvs.sh \
-    init.target.rc\
+    init.target.rc \
     ueventd.qcom.rc
 
 # IPACM
@@ -322,9 +324,7 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-elixir 
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-elixir
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
@@ -357,9 +357,8 @@ PRODUCT_PACKAGES += \
 
 # Prebuilts
 PRODUCT_PACKAGES += \
-    AdAwayPrebuilt \
-    GCamGOPrebuilt-SHAMIM_V5 \
-    GrapheneOSCamera
+    adaway \
+    gcamgo 
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -390,10 +389,6 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
-
-# Shims
-PRODUCT_PACKAGES += \
-    lib-watermarkshim
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 29
