@@ -98,15 +98,24 @@ PRODUCT_PACKAGES += \
     audio.primary.kona \
     audio.r_submix.default \
     audio.usb.default \
+    libaacwrapper \
+    libaudiopreprocessing \
     libbatterylistener \
+    libbundlewrapper \
     libcomprcapture \
+    libdownmix \
+    libdynproc \
+    libeffectproxy \
     libhdmiedid \
     libhfp \
+    libldnhncr \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
+    libreverbwrapper \
     libsndmonitor \
     libtinycompress \
+    libvisualizer \
     libvolumelistener
 
 PRODUCT_COPY_FILES += \
@@ -138,23 +147,8 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
     android.hardware.bluetooth.audio-impl \
     com.dsi.ant@1.0.vendor \
-    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
-
-ifneq (,$(wildcard vendor/qcom/opensource/commonsys/system/bt))
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.bluetooth.library_name=libbluetooth_qti.so
-endif
-
-# Build Fingerprint spoofing to allow Pixel-exclusive apps
-ifeq ($(TARGET_USE_PIXEL_FINGERPRINT), true)
-    BUILD_FINGERPRINT := "google/cheetah/cheetah:13/TQ1A.230105.002.A1/9409646:user/release-keys"
-    PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRIVATE_BUILD_DESC="cheetah-user 13 TQ1A.230105.002.A1 9409646 release-keys"
-else 
-    BUILD_FINGERPRINT := "Xiaomi/cas/cas:12/RKQ1.211001.001/V13.0.6.0.SJJCNXM:user/release-keys"
-endif
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -166,41 +160,28 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
-PRODUCT_PACKAGES += \
-    libpiex_shim
+# Component overrides
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
 
 # Display
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.mapper@3.0-impl-qti-display \
-    android.hardware.graphics.mapper@4.0-impl-qti-display \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    gralloc.kona \
-    libdisplayconfig.qti \
-    libdisplayconfig.system.qti \
-    libqdMetaData \
-    libqdMetaData.system \
-    libtinyxml \
-    memtrack.kona \
-    vendor.display.config@1.0 \
-    vendor.display.config@1.11.vendor \
-    vendor.display.config@2.0 \
-    vendor.display.config@2.0.vendor \
-    vendor.qti.hardware.display.allocator-service \
-    vendor.qti.hardware.display.composer-service \
-    vendor.qti.hardware.display.mapper@1.1.vendor \
-    vendor.qti.hardware.display.mapper@2.0.vendor \
-    vendor.qti.hardware.display.mapper@3.0.vendor \
-    vendor.qti.hardware.display.mapper@4.0.vendor
+$(call inherit-product, hardware/qcom-caf/sm8250/display/config/display-product.mk)
+$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-product.mk)
+$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk)
+$(call inherit-product, vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk)
+$(call inherit-product, vendor/qcom/opensource/display/config/display-product-vendor.mk)
+
+BOARD_DISPLAY_HAL := hardware/qcom-caf/sm8250/display
+TARGET_BOARD_PLATFORM := kona
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
-    android.hardware.drm-service.clearkey
+    android.hardware.drm@1.4-service.clearkey
 
 # Fastboot
 PRODUCT_PACKAGES += \
@@ -356,9 +337,13 @@ PRODUCT_PACKAGES += \
     WifiResTarget \
     DeviceFrameworks \
     DeviceSystemUI \
-    DeviceTelephony
+    DeviceTelephony \
+    SettingsResCas \
+    SettingsProviderOverlay
+
 
 # Partitions
+PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Parts
