@@ -91,6 +91,7 @@ vendor.audio.volume.headset.gain.depcal=true
 vendor.voice.path.for.pcm.voip=true
 
 # Bluetooth
+bluetooth.device.default_name=Mi 10 Ultra
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 persist.bluetooth.a2dp_offload.disabled=false
 persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
@@ -199,3 +200,14 @@ ro.soc.model=SM8250
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=1440
 ro.zram.periodic_wb_delay_hours=24
+
+# USB
+vendor.usb.product_string=Mi 10 Ultra
+vendor.usb.diag.func.name=diag
+vendor.usb.dpl.inst.name=dpl
+vendor.usb.qdss.inst.name=qdss
+vendor.usb.rmnet.func.name=gsi
+vendor.usb.rmnet.inst.name=rmnet
+vendor.usb.rndis.func.name=gsi
+vendor.usb.use_ffs_mtp=0
+vendor.usb.use_gadget_hal=0
