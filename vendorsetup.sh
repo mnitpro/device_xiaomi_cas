@@ -28,7 +28,8 @@ echo -e "                                             "
 
 echo -e "${BCYAN}Cloning Xiaomi HW Tree [3/3] ${NC}"
 # Hardware Xiaomi
-git clone https://github.com/PixelExperience/hardware_xiaomi hardware/xiaomi
+#rm -rf hardware/xiaomi
+git clone https://github.com/LineageOS/android_hardware_xiaomi hardware/xiaomi
 
 echo -e "                                             "
 echo -e "${BYELLOW}${BOLD}******************************************************** ${NC}"
@@ -47,30 +48,38 @@ echo -e "                                             "
 echo -e "${BPURPLE}Cloning QCOM SEPolicy [2/5]${NC}"
 # QCOM SEPolicy
 #rm -rf device/qcom/sepolicy
-#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy -b arrow-13.0 device/qcom/sepolicy
+git clone https://github.com/AcmeUI/android_device_qcom_sepolicy -b taffy device/qcom/sepolicy
+echo -e "                                             "
+
 #rm -rf device/qcom/sepolicy-legacy
-#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy-legacy device/qcom/sepolicy-legacy
+git clone https://github.com/ArrowOS/android_device_qcom_sepolicy-legacy device/qcom/sepolicy-legacy
+echo -e "                                             "
+
 #rm -rf device/qcom/sepolicy-legacy-um
-#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy-legacy-um -b arrow-13.0 device/qcom/sepolicy-legacy-um
+git clone https://github.com/AcmeUI/android_device_qcom_sepolicy-legacy-um -b taffy device/qcom/sepolicy-legacy-um
+echo -e "                                             "
+
 #rm -rf device/qcom/sepolicy_vndr
-#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy_vndr -b arrow-13.0 device/qcom/sepolicy_vndr
+git clone https://github.com/AcmeUI/android_device_qcom_sepolicy_vndr -b taffy device/qcom/sepolicy_vndr
+echo -e "                                             "
+
 #rm -rf device/qcom/sepolicy_vndr-legacy-um
-#git clone https://github.com/ArrowOS/android_device_qcom_sepolicy_vndr-legacy-um -b arrow-13.0 device/qcom/sepolicy_vndr-legacy-um
+git clone https://github.com/ArrowOS/android_device_qcom_sepolicy_vndr-legacy-um -b arrow-13.0 device/qcom/sepolicy_vndr-legacy-um
 
 echo -e "                                             "
 echo -e "${BPURPLE}Cloning display HAL [3/5]${NC}"
 # Display HALs
 #rm -rf hardware/qcom-caf/sm8250/display
-#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_display -b spring-caf-sm8250 hardware/qcom-caf/sm8250/display
+git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_display -b spring-caf-sm8250 hardware/qcom-caf/sm8250/display
 
 echo -e "                                             "
 echo -e "${BPURPLE}Cloning audio HAL [4/5]${NC}"
 # Audio HALs
 #rm -rf hardware/qcom-caf/sm8250/audio
-#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_audio -b taffy-caf-sm8250 hardware/qcom-caf/sm8250/audio
+git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_audio -b taffy-caf-sm8250 hardware/qcom-caf/sm8250/audio
 
 echo -e "                                             "
 echo -e "${BPURPLE}Cloning media HAL [5/5]${NC}"
 # Media HALs
 #rm -rf hardware/qcom-caf/sm8250/media
-#git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_media -b taffy-caf-sm8250 hardware/qcom-caf/sm8250/media
+git clone --depth=1 https://github.com/AcmeUI/android_hardware_qcom_media -b taffy-caf-sm8250 hardware/qcom-caf/sm8250/media
