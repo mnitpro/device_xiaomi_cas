@@ -17,9 +17,26 @@
 <resources>
     <!-- Ambient settings -->
     <string name="ambient_enable">Use ambient display</string>
+    <string name="ambient_display_title">Ambient Display</string>
+    <string name="ambient_display_always_on_summary">Ambient Display Always On Summary</string>
+    <string name="ambient_display_always_on_title">Ambient Display Always On</string>
 
     <!-- DC dimming settings -->
     <string name="dc_dimming_enable_title">DC Dimming</string>
     <string name="dc_dimming_enable_summary">Reduces eye strain in low light conditions</string>
     <string name="dc_dimming_enable_summary_not_supported">DC Dimming is currently not supported by the kernel</string>
+
+    <!-- Settings settings -->
+    <string name="device_settings_app_name">Settings</string>
+
+    <!-- Doze settings -->
+    <string name="pickup_sensor_title">Pickup Sensor</string>
+    <string name="pick_up_gesture_summary">Pickup Gesture Summary</string>
+    <string name="pick_up_gesture_title">Pickup Gesture</string>
+    <string name="proximity_sensor_title">Proximity Sensor</string>
+    <string name="hand_wave_gesture_summary">Handwave Gesture Summary</string>
+    <string name="hand_wave_gesture_title">Handwave Gesture</string>
+    <string name="pocket_gesture_summary">Pocket Gesture Summary</string>
+    <string name="pocket_gesture_title">Pocket Gesture</string>
+
 </resources>
