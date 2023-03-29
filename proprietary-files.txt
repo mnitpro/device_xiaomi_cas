@@ -1,4 +1,4 @@
-# All blobs below are extracted - from V13.0.5.0.SJJCNXM, unless pinned
+# All blobs below are extracted - from V13.0.6.0.SJJCNXM, unless pinned
 
 # ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
@@ -36,6 +36,7 @@ vendor/lib64/libsdsprpc.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Speech_Decoder.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDADV_Encoder.so
 vendor/lib/rfsa/adsp/capi_v2_cirrus_sp.so
+vendor/lib/rfsa/adsp/hrtf5c.bin
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libarcsoft_hdrplus_hvx_skel.so
 vendor/lib/rfsa/adsp/libbitml_nsp_skel.so
@@ -78,11 +79,14 @@ vendor/lib64/rfsa/adsp/libsns_low_lat_stream_skel.so
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
 vendor/bin/power_off_alarm
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
+vendor/lib/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib/vendor.qti.hardware.alarm@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # Audio
+vendor/lib/hw/audio.primary.kona.so
+vendor/lib/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
 vendor/lib/liba2dpoffload.so
 vendor/lib/libadiertac.so
 vendor/lib/libadm.so
@@ -125,6 +129,12 @@ vendor/etc/sound_trigger_mixer_paths.xml
 vendor/etc/sound_trigger_platform_info.xml
 
 # Audio FX Modules
+vendor/lib/soundfx/libasphere.so
+vendor/lib/soundfx/libmisoundfx.so
+vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcreverb.so
+vendor/lib/soundfx/libqcvirt.so
+vendor/lib/soundfx/libshoebox.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
@@ -134,6 +144,9 @@ vendor/lib64/soundfx/libshoebox.so
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib/libbt-hidlclient.so
 vendor/lib/libbtnv.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
@@ -147,6 +160,36 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
 # Camera
+system/lib/libyuv.so
+vendor/lib/camera/com.qti.actuator.cas_ofilm_ultra_dw9800.so
+vendor/lib/camera/com.qti.eeprom.cas_ofilm_imx350_gt24p64b.so
+vendor/lib/camera/com.qti.eeprom.cas_semco_imx586_sem1215.so
+vendor/lib/camera/com.qti.eeprom.cas_semco_ov48c_m24c64x.so
+vendor/lib/camera/com.qti.eeprom.cas_semco_s5k2l7_m24c64x_tele2x.so
+vendor/lib/camera/com.qti.eeprom.cas_sunny_s5k3t2_gt24p64.so
+vendor/lib/camera/com.qti.eeprom.truly_cmb433.so
+vendor/lib/camera/com.qti.eeprom.umi_sunny_s5k5e8yx_depth.so
+vendor/lib/camera/com.qti.sensor.cas_imx586.so
+vendor/lib/camera/com.qti.sensor.imx350_cas.so
+vendor/lib/camera/com.qti.sensor.imx563.so
+vendor/lib/camera/com.qti.sensor.ov48c_cas.so
+vendor/lib/camera/com.qti.sensor.s5k2l7_cas.so
+vendor/lib/camera/com.qti.sensor.s5k3t2_cas.so
+vendor/lib/camera/com.qti.sensormodule.cas_ofilm_imx350_ultra_wide.bin
+vendor/lib/camera/com.qti.sensormodule.cas_semco_ov48c_wide.bin
+vendor/lib/camera/com.qti.sensormodule.cas_semco_s5k2l7_tele2x.bin
+vendor/lib/camera/com.qti.sensormodule.cas_semco_tele5x_imx586.bin
+vendor/lib/camera/com.qti.sensormodule.cas_sunny_s5k3t2.bin
+vendor/lib/camera/com.qti.tuned.cas_ofilm_imx350_ultra_wide.bin
+vendor/lib/camera/com.qti.tuned.cas_semco_imx586_tele5x.bin
+vendor/lib/camera/com.qti.tuned.cas_semco_ov48c_wide.bin
+vendor/lib/camera/com.qti.tuned.cas_semco_s5k2l7_tele2x.bin
+vendor/lib/camera/com.qti.tuned.cas_sunny_s5k3t2.bin
+vendor/lib/camera/com.qti.tuned.default.bin
+vendor/lib/camera/fdconfigpreview.bin
+vendor/lib/camera/fdconfigpreviewlite.bin
+vendor/lib/camera/fdconfigvideo.bin
+vendor/lib/camera/fdconfigvideolite.bin
 vendor/lib/com.qti.feature2.demux.so
 vendor/lib/com.qti.feature2.framecollector.so
 vendor/lib/com.qti.feature2.frameselect.so
@@ -166,6 +209,8 @@ vendor/lib/com.qti.feature2.sr.so
 vendor/lib/com.qti.feature2.stub.so
 vendor/lib/com.qti.feature2.swmf.so
 vendor/lib/com.qti.feature2.tintless.so
+vendor/lib/hw/camera.qcom.so
+vendor/lib/hw/com.qti.chi.override.so
 vendor/lib/libcamera_nn_stub.so
 vendor/lib/libcamerapostproc.so
 vendor/lib/libcapiv2svacnn.so
@@ -384,6 +429,41 @@ vendor/lib64/libmiphone_bokeh_effect.so
 vendor/lib64/libwa_sat.so
 
 # Camera-components
+vendor/lib/camera/components/com.qti.camx.chiiqutils.so
+vendor/lib/camera/components/com.qti.eisv2.so
+vendor/lib/camera/components/com.qti.eisv3.so
+vendor/lib/camera/components/com.qti.hvx.addconstant.so
+vendor/lib/camera/components/com.qti.hvx.binning.so
+vendor/lib/camera/components/com.qti.node.customhwnode.so
+vendor/lib/camera/components/com.qti.node.depth.so
+vendor/lib/camera/components/com.qti.node.dummyrtb.so
+vendor/lib/camera/components/com.qti.node.dummysat.so
+vendor/lib/camera/components/com.qti.node.eisv2.so
+vendor/lib/camera/components/com.qti.node.eisv3.so
+vendor/lib/camera/components/com.qti.node.fcv.so
+vendor/lib/camera/components/com.qti.node.gpu.so
+vendor/lib/camera/components/com.qti.node.memcpy.so
+vendor/lib/camera/components/com.qti.node.stich.so
+vendor/lib/camera/components/com.qti.node.swregistration.so
+vendor/lib/camera/components/com.qti.stats.aec.so
+vendor/lib/camera/components/com.qti.stats.aecwrapper.so
+vendor/lib/camera/components/com.qti.stats.af.so
+vendor/lib/camera/components/com.qti.stats.afd.so
+vendor/lib/camera/components/com.qti.stats.afwrapper.so
+vendor/lib/camera/components/com.qti.stats.asd.so
+vendor/lib/camera/components/com.qti.stats.awb.so
+vendor/lib/camera/components/com.qti.stats.awbwrapper.so
+vendor/lib/camera/components/com.qti.stats.haf.so
+vendor/lib/camera/components/com.qti.stats.hafoverride.so
+vendor/lib/camera/components/com.qti.stats.pdlib.so
+vendor/lib/camera/components/com.qti.stats.pdlibsony.so
+vendor/lib/camera/components/com.qti.stats.pdlibwrapper.so
+vendor/lib/camera/components/com.qti.stats.tracker.so
+vendor/lib/camera/components/com.qtistatic.stats.aec.so
+vendor/lib/camera/components/com.qtistatic.stats.af.so
+vendor/lib/camera/components/com.qtistatic.stats.awb.so
+vendor/lib/camera/components/com.qtistatic.stats.pdlib.so
+vendor/lib/camera/components/libdepthmapwrapper.so
 vendor/lib64/camera/components/com.altek.node.depurple.so
 vendor/lib64/camera/components/com.anc.node.sat.so
 vendor/lib64/camera/components/com.arcsoft.node.deflicker.so
@@ -448,6 +528,13 @@ vendor/lib64/camera/components/libdepthmapwrapper.so
 vendor/lib64/camera/components/libubifocus.so
 
 # Camera-configs
+vendor/camera/fonts/FZMiaoWuJW.ttf
+vendor/camera/fonts/MFYueYuan-Regular.ttf
+vendor/camera/fonts/MI+LanTing_GB+Outside+YS_V2.3_20160322.ttf
+vendor/camera/fonts/MIUI_Time.ttf
+vendor/camera/mimoji/data.zip
+vendor/camera/mimoji/model2.zip
+vendor/camera/model/model_front.dlc
 vendor/etc/camera/102_SummerDay.png
 vendor/etc/camera/103_Fantasy.png
 vendor/etc/camera/104_Meet.png
@@ -653,6 +740,7 @@ vendor/etc/init/vendor.qti.hardware.charger_monitor@1.0-service.rc
 # Configstore
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
+vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 
 # Connection Security
@@ -751,6 +839,7 @@ vendor/lib/libbase64.so
 vendor/lib/libcppf.so
 vendor/lib/libtrustedapploader.so
 vendor/lib/libwvkeybox.so
+vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/libbase64.so
 vendor/lib64/libtrustedapploader.so
 vendor/lib64/libwvhidl.so
@@ -1308,12 +1397,14 @@ vendor/lib64/vendor.qti.hardware.fm@1.0.so
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
+vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # GNSS
 -vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti
 vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc
+vendor/lib/hw/android.hardware.gnss@2.1-impl-qti.so
 vendor/lib/libbatching.so
 vendor/lib/libgeofencing.so
 vendor/lib/libgnss.so
@@ -1418,7 +1509,14 @@ vendor/lib64/libOpenCL.so
 vendor/lib64/libVkLayer_q3dtools.so
 
 # Graphics (Vulkan)
+vendor/lib/hw/vulkan.adreno.so
 vendor/lib64/hw/vulkan.adreno.so
+
+# HotwordEnrollment - from STARGlobal V12.5.3.0.SKAMIXM
+-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk|3a0089f1a2d5b5acca1cec8330db5c5f3d738f2a
+-product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk|5b6439d4ee66206fd4b1159294b363920fe39a82
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|563a58554d9c0dd0608552b644fbf74519a447bb
+system_ext/framework/com.android.hotwordenrollment.common.util.jar|c764b636e0be426a66be09dd08ab9c1921327ef0
 
 # IOP
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
@@ -1444,6 +1542,7 @@ vendor/lib64/libqtikeymaster4.so
 vendor/lib64/libspcom.so
 
 # Listen
+vendor/lib/hw/sound_trigger.primary.kona.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libcapiv2svacnn.so
 vendor/lib/libcapiv2svarnn.so
@@ -1474,6 +1573,8 @@ vendor/lib/libnpu.so
 vendor/lib64/libnpu.so
 
 # Media
+system_ext/lib/libmmosal.so
+system_ext/lib/libmmparser_lite.so
 system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmparser_lite.so
 vendor/etc/seccomp_policy/codec2.vendor.base-arm.policy
