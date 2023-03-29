@@ -34,3 +34,9 @@ power.saving.mode=1
 
 # Pre-Rendering
 ro.vendor.perf.scroll_opt=true
+
+# SparkOS Stuff
+ro.spark.status=Unofficial
+ro.spark.maintainer=Zinger
+ro.spark.maintainer.username=zingrx
+ro.spark.device.name=Mi 10 Ultra 5G
