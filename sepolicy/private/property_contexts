@@ -37,3 +37,5 @@ ro.build.expect.        u:object_r:exported_default_prop:s0
 
 # Hardware
 ro.hardware.chipname           u:object_r:exported_default_prop:s0
+
+persist.device_config.tethering. u:object_r:device_config_tethering_prop:s0
