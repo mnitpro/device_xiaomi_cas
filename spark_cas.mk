@@ -11,31 +11,28 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from the device configuration.
 $(call inherit-product, device/xiaomi/cas/device.mk)
 
-# Inherit some common DerpFest stuffs.
+# Inherit some common Spark-OS stuff.
 $(call inherit-product, vendor/spark/config/common_full_phone.mk)
-
+# Rom Specific Flags
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
-TARGET_INCLUDE_STOCK_ACORE := true
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
-TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_SUPPORTS_CALL_RECORDING := true
-WITH_FOD_ANIMATIONS := true
-TARGET_USES_BLUR := true
+TARGET_INCLUDE_WIFI_EXT := true
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_FACE_UNLOCK_SUPPORTED := true
-
-# Spoof build description/fingerprint as pixel device
-TARGET_USE_PIXEL_FINGERPRINT := true
-
-# GMS build flags, if none were defined the package build type will be AOSP (default: false)
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_QUICK_TAP  := true
+EXTRA_UDFPS_ANIMATIONS := true
 WITH_GAPPS := true
-TARGET_GAPPS_ARCH := arm64
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.spark.maintainer=Zinger \
+	ro.spark.status=UNOFFICIAL
 
 PRODUCT_NAME := spark_cas
 PRODUCT_DEVICE := cas
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := M2007J1SC
 PRODUCT_MANUFACTURER := Xiaomi
+BOARD_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
