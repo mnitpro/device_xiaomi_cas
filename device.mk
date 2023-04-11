@@ -88,9 +88,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
 
-# Apex
-OVERRIDE_TARGET_FLATTEN_APEX := true
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@6.0-impl \
@@ -152,15 +149,6 @@ PRODUCT_PACKAGES += \
     com.dsi.ant@1.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
-
-# Build Fingerprint spoofing to allow Pixel-exclusive apps
-ifeq ($(TARGET_USE_PIXEL_FINGERPRINT), true)
-    BUILD_FINGERPRINT := "google/cheetah/cheetah:13/TQ1A.230205.002/9471150:user/release-keys"
-    PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRIVATE_BUILD_DESC="cheetah-user 13 TQ1A.230205.002 9471150 release-keys"
-else 
-    BUILD_FINGERPRINT := "Xiaomi/cas/cas:12/RKQ1.211001.001/V13.0.6.0.SJJCNXM:user/release-keys"
-endif
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -340,15 +328,16 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
     CarrierConfigResCommon \
-    DeviceFrameworks \
-    DeviceSystemUI \
-    DeviceTelephony \
     FrameworksResCommon \
-    SettingsProviderOverlay \
+    FrameworksResTarget \
     SystemUIResCommon \
     TelephonyResCommon \
     WifiResCommon \
-    WifiResTarget
+    WifiResTarget \
+    DeviceFrameworks \
+    DeviceSystemUI \
+    DeviceTelephony \
+
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
@@ -369,10 +358,6 @@ PRODUCT_PACKAGES += \
 # PowerShare
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.xiaomi_kona
-
-# Prebuilts
-PRODUCT_PACKAGES += \
-    MIUIGallery 
 
 # QMI
 PRODUCT_PACKAGES += \
