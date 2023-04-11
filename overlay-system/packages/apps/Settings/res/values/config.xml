@@ -39,4 +39,19 @@
     <bool name="config_show_refresh_rate_controls">true</bool>
     <bool name="config_supports_dynamic_refresh_rate_controls">true</bool>
 
+    <!-- Night Light FOD -->
+    <bool name="disable_fod_night_light">true</bool>
+
+    <!-- Pocket Lock -->
+    <bool name="config_pocketModeSupported">true</bool>
+	
+	<!-- Smart Charging -->
+    <bool name="config_supportSmartCharging">true</bool>
+
+    <!-- Battery health -->
+    <bool name="config_supportBatteryHealth">true</bool>
+    <string name="config_batCurCap">/sys/class/power_supply/bms/charge_full</string>
+    <string name="config_batDesCap">/sys/class/power_supply/bms/charge_full_design</string>
+    <string name="config_batChargeCycle">/sys/class/power_supply/bms/cycle_count</string>
+
 </resources>
